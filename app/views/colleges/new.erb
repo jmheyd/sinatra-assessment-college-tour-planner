@@ -1,0 +1,48 @@
+<header>
+		<div class="container">
+			<div class="logo">
+				<h1>College Tour Planner</h1>
+			</div>
+			<nav class="nav-main">
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="/colleges">Colleges</a></li>
+					<li><a href="/users/<%=@user.username%>">My List</a></li>
+					<li><a href="/users/<%=@user.username%>/edit">Edit My List</a></li>
+					<li><a href="/logout">Logout</a></li>
+				</ul>
+			</nav>
+		</div><!--.container-->
+	</header>
+
+<div class="feature">
+	<div class="petersons_help">
+	<p><a target="_blank" href="https://www.petersons.com/">Open petersons.com in new window to get info:</a></p>
+	</div>
+</div>
+
+<div class="feature">
+<h2>Add a New College</h2>
+
+<form action="/colleges" method="POST">
+
+	<p><input  type="text" name="college[name]" placeholder="College Name"></input></p>
+  <p><input  type="text" name="college[enrollment]" placeholder="Students Enrolled"></input></p>
+  <p><input  type="text" name="college[tuition]" placeholder="Tuition"></input></p>
+  <p><input  type="text" name="college[acceptance_rate]" placeholder="Acceptance Rate"></input></p>
+  <p><input  type="text" name="college[location]" placeholder="Location"></input></p>
+  <p><input  type="text" name="college[college_type]" placeholder="Private or Public"></input></p>
+  <p><input  type="text" name="college[setting]" placeholder="Type of setting"></input></p>
+	<p><input  type="text" name="college[url]" placeholder="Website"></input></p>
+	<p><input  type="text" name="college[petersons_url]" placeholder="petersons.com link"></input></p>
+  <p><input type="submit" value="Add College"></p>
+</form>
+</div>
+
+<div class="feature">
+	<% if !@error_message.nil? %>
+      <div class="alert alert-warning">
+        <%= @error_message %>
+      </div>
+  <% end %>
+

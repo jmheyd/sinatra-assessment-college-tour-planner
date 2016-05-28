@@ -1,0 +1,34 @@
+<header>
+		<div class="container">
+			<div class="logo">
+				<h1>College Tour Planner</h1>
+			</div>
+			<nav class="nav-main">
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="/colleges">Colleges</a></li>
+					<li><a href="/users/<%=@user.username%>">My List</a></li>
+					<li><a href="/users/<%=@user.username%>/edit">Edit My List</a></li>
+					<li><a href="/logout">Logout</a></li>
+				</ul>
+			</nav>
+		</div>
+</header>
+
+<div class="feature">
+	<h2><a target="_blank" href="<%=@college.url%>"><%=@college.name%></a></h2>
+	<p><%=@college.location%></p>
+	<p><%=@college.enrollment%></p>
+	<p><%=@college.tuition%></p>
+	<p>Acceptance Rate: <%=@college.acceptance_rate%></p>
+	<p>Type of college: <%=@college.college_type%></p>
+	<p>Setting: <%=@college.setting%></p>
+	<p><a target="_blank" href="<%=@college.petersons_url%>">Additional Information</a></p>
+	
+	<button><a href="/colleges/<%=@college.id%>/edit">Edit This College Info</a></button>
+</div>
+
+
+
+
+

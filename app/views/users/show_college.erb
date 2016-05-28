@@ -1,0 +1,30 @@
+<header>
+		<div class="container">
+			<div class="logo">
+				<h1>College Tour Planner</h1>
+			</div>
+			<nav class="nav-main">
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="/colleges">Colleges</a></li>
+					<li><a href="">My List</a></li>
+					<li><a href="/users/<%=@user.username%>/edit">Edit My List</a></li>
+					<li><a href="/logout">Logout</a></li>
+				</ul>
+			</nav>
+		</div><!--.container-->
+	</header>
+
+<h2><a href="<%=@college.url%>"><%=@college.name%></a></h2>
+<p><%=@college.location%></p>
+<p><%=@college.enrollment%></p>
+<p><%=@college.tuition%></p>
+<p>Acceptance Rate: <%=@college.acceptance_rate%></p>
+<p>Type of college: <%=@college.college_type%></p>
+<p>Setting: <%=@college.setting%></p>
+<p>My Notes: <%=@user_college.my_notes%></p>
+
+
+
+<a href="/users/<%=@user.username%>">Return to My List</a>
+

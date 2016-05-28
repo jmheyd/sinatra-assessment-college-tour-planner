@@ -1,0 +1,7 @@
+<h1>My notes about <%=@college.name%>
+
+<form action="/notes/<%=@user.username%>/<%=@college.id%>" method="POST">
+	<p><input  type="text" name="user_college[my_notes]" placeholder="My Notes"></input></p>
+ <!--  <textarea id="my_notes" class="text" cols="86" rows="10" name="user_college[my_notes]"></textarea> -->
+  <p><input type="submit" value="Create New Note"></p>
+</form>

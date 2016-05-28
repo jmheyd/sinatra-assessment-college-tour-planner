@@ -1,0 +1,35 @@
+<header>
+		<div class="container">
+			<div class="logo">
+				<h1>College Tour Planner</h1>
+			</div>
+			<nav class="nav-main">
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="/colleges">Colleges</a></li>
+					<li><a href="/colleges/new">Add New College</a></li>
+					<li><a href="/users/<%=@user.username%>">My List</a></li>
+					<li><a href="/logout">Logout</a></li>
+				</ul>
+			</nav>
+		</div><!--.container-->
+	</header>
+
+
+<div class="container">
+<div class="edit_list">
+<h2>Edit Your List</h2>
+
+<form action="/users/<%=@user.username%>" method="POST">
+	<input id="hidden" type="hidden" name="_method" value="patch"></input>
+
+<%@colleges.each do |college|%>
+    <p><input type="checkbox" name="user[college_ids][]" value="<%=college.id%>" id="<%=college.name%>" <%='checked' if @user.colleges.include?(college) %>><%= college.name%></input></p>
+  <%end%>
+  <p><input type="submit" value="Update My List"></input></p>
+</form>
+</div>
+</div>
+
+
+

@@ -1,0 +1,26 @@
+<header>
+		<div class="container">
+			<div class="logo">
+				<h1>College Tour Planner</h1>
+			</div>
+			<nav class="nav-main">
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="/colleges">Colleges</a></li>
+					<li><a href="/users/<%=@user.username%>">My List</a></li>
+					<li><a href="/users/<%=@user.username%>/edit">Edit My List</a></li>
+					<li><a href="/logout">Logout</a></li>
+				</ul>
+			</nav>
+		</div><!--.container-->
+	</header>
+	<div class="feature">
+<h2>Edit This Note</h2>
+
+<form action="/notes/<%=@user.username%>/<%=@college.id%>" method="POST">
+	<input id="hidden" type="hidden" name="_method" value="patch"></input>
+	<p><input  type="text" name="user_college[my_notes]" placeholder="My Notes" value="<%=@user_college.my_notes%>"></input></p>
+  <p><input type="submit" value="Update My Note"></p>
+</form>
+</div>
+

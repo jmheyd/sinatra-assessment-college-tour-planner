@@ -1,0 +1,55 @@
+<header>
+		<div class="container">
+			<div class="logo">
+				<h1>College Tour Planner</h1>
+			</div>
+			<nav class="nav-main">
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="/colleges">Colleges</a></li>
+					<li><a href="">My List</a></li>
+					<li><a href="/users/<%=@user.username%>/edit">Edit My List</a></li>
+					<li><a href="/logout">Logout</a></li>
+				</ul>
+			</nav>
+		</div><!--.container-->
+	</header>
+	
+<div class="feature">
+	<% if !@error_message.nil? %>
+      <div class="alert alert-warning">
+        <%= @error_message %>
+      </div>
+  <% end %>
+ </div>
+
+<div class="feature">
+	<h2 class = "page_greeting">Here is your list, <%=@user.first_name%></h2>
+	<h4>(Click on each college for an overview and to take notes.)</h4>
+
+	<div class="college_list">
+		<ol>
+			<%@user.colleges.each do |college|%>
+				<li><a href="/notes/<%=@user.username%>/<%=college.id%>"><%=college.name%></a></li>
+			<%end%>
+		</ol>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+

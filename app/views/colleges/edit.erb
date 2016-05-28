@@ -1,0 +1,40 @@
+<header>
+    <div class="container">
+      <div class="logo">
+        <h1>College Tour Planner</h1>
+      </div>
+      <nav class="nav-main">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/colleges">Colleges</a></li>
+          <li><a href="/users/<%=@user.username%>">My List</a></li>
+          <li><a href="/users/<%=@user.username%>/edit">Edit My List</a></li>
+          <li><a href="/logout">Logout</a></li>
+        </ul>
+      </nav>
+    </div>
+</header>
+
+
+
+<div class="feature">
+<h2>Edit this college information:</h2>
+ 
+<form action="/colleges/<%=@college.id%>" method="POST">
+	<input id="hidden" type="hidden" name="_method" value="patch"></input>
+  
+	<p><input type="text" name="college[name]" value="<%=@college.name%>"></input></p>
+  <p><input type="text" name="college[enrollment]" value="<%=@college.enrollment%>"></input></p>
+  <p><input type="text" name="college[tuition]" value="<%=@college.tuition%>"></input></p>
+  <p><input type="text" name="college[acceptance_rate]" value="<%=@college.acceptance_rate%>"></input></p>
+  <p><input type="text" name="college[location]" value="<%=@college.location%>"></input></p>
+  <p><input type="text" name="college[college_type]" value="<%=@college.college_type%>"></input></p>
+  <p><input type="text" name="college[setting]" value="<%=@college.setting%>"></input></p>
+	<p><input type="text" name="college[url]" value="<%=@college.url%>"></input></p>
+  <p><input  type="text" name="college[petersons_url]" value="<%=@college.petersons_url%>"></input></p>
+  <p><input type="submit" value="Update College Info"></input></p>
+</form>
+</div>
+
+
+

@@ -1,0 +1,37 @@
+<header>
+		<div class="container">
+			<div class="logo">
+				<h1>College Tour Planner</h1>
+			</div>
+			<nav class="nav-main">
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="/colleges">Colleges</a></li>
+					<li><a href="">My List</a></li>
+					<li><a href="/users/<%=@user.username%>/edit">Edit My List</a></li>
+					<li><a href="/logout">Logout</a></li>
+				</ul>
+			</nav>
+		</div><!--.container-->
+	</header>
+
+<div class="feature">
+<h2>Let's make your college visit list, <%= @user.first_name %>! </h2>
+<h3>Choose from the list below:</h3>
+</div>
+<div class="edit_list">
+<form action="/users/<%=@user.username%>" method="POST">
+  <%@colleges.each do |college|%>
+  	<p><input type="checkbox" name="user[college_ids][]" value="<%=college.id%>" id="<%=college.name%>"><a href="/colleges/<%=college.id%>"><%=college.name%></a></input>
+    </p>
+	<%end%>
+	</div>
+	<div class="feature">
+	<p><input type="submit" value="Create My List"></input></p>
+  </form>
+  </div>
+
+	
+
+
+	

@@ -1,0 +1,19 @@
+<h1>Edit This College on Your List</h1>
+ 
+<form action="/colleges/<%=@college.id%>" method="POST">
+	<input id="hidden" type="hidden" name="_method" value="patch"></input>
+  
+  <p><label>CollegeName:</label></p>
+	<p><input type="text" name="college[name]" value="<%=@college.name%>"></input></p>
+  <p><input type="text" name="college[enrollment]" value="<%=@college.enrollment%>"></input></p>
+  <p><input type="text" name="college[tuition]" value="<%=@college.tuition%>"></input></p>
+  <p><input type="text" name="college[acceptance_rate]" value="<%=@college.acceptance_rate%>"></input></p>
+  <p><input type="text" name="college[location]" value="<%=@college.location%>"></input></p>
+  <p><input type="text" name="college[college_type]" value="<%=@college.college_type%>"></input></p>
+  <p><input type="text" name="college[setting]" value="<%=@college.setting%>"></input></p>
+	<p><input type="text" name="college[url]" value="<%=@college.url%>"></input></p>
+	<p><input type="text" name="user_college[my_notes]" value="<%=@my_notes%>"</input></p>
+  <p><input type="submit" value="Update College Info"></input></p>
+</form>
+
+

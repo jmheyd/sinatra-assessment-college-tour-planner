@@ -1,0 +1,4 @@
+notes
+<%College.all.each do |college|%> 
+  <p><input type="checkbox" name="user[college_ids][]" id="<%= college.name%>" value="<%=college.id%>" <%='checked' if @user.colleges.include?(college) %>><%= college.name%></input></p> 
+ <%end%>
